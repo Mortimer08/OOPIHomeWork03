@@ -1,18 +1,24 @@
+import ShapesCollection.ShapesCollection;
 import ShapesCollection.ShapesCreation;
 import UserInterface.Menu;
 
 public class Program {
     public static void main(String[] args) throws Exception {
+        ShapesCollection sc = new ShapesCollection();
+        ShapesCreation.fillCollection(sc);
         while (true) {
             try {
-                ShapesCreation.shapesCreation();
+
                 Menu menu = new Menu();
-                menu.run(ShapesCreation.sc1);
+                menu.run(sc);
 
             } catch (Exception e) {
-                System.out.println(e.getMessage());
-                if (e.getMessage().equals("Работа закончена"))
+                if (e.getMessage().equals("Работа закончена")) {
                     break;
+                } else {
+                    System.out.println(e.getMessage());
+                }
+
             }
         }
 

@@ -109,7 +109,7 @@ public class Menu {
 
     public void removeShape() {
         keepRun = true;
-        System.out.println("Выберите номер фигуры для удаления (нумерация от 0): ");
+        System.out.printf("Выберите номер фигуры для удаления (от 0 до %d): ", shapesCollection.getSize()-1);
         menuItem = userChoice(scanner);
         if (menuItem >= 0 && menuItem < shapesCollection.getSize()) {
             shapesCollection.removeShape(menuItem);
@@ -118,7 +118,7 @@ public class Menu {
 
     public void changeShapeMenu() throws Exception {
         keepRun = true;
-        System.out.println("Выберите номер фигуры для изменения (нумерация от 0): ");
+        System.out.printf("Выберите номер фигуры для изменения (от 0 до %d): ", shapesCollection.getSize()-1);
         menuItem = userChoice(scanner);
         if (menuItem >= 0 && menuItem < shapesCollection.getSize()) {
             Shape shape = shapesCollection.getShape(menuItem);
@@ -187,7 +187,7 @@ public class Menu {
         System.out.println("\t7. Удалить фигуру");
         System.out.println("\t8. Изменить фигуру");
         System.out.println("\t9. Выход");
-        System.out.println("Введите выбранный пункт: ");
+        System.out.print("Введите выбранный пункт: ");
     }
 
     private void showAddShapeMenu() {
@@ -197,7 +197,7 @@ public class Menu {
         System.out.println("\t3. Прямоугольник");
         System.out.println("\t4. Круг");
         System.out.println("\t5. Выход");
-        System.out.println("Введите выбранный пункт: ");
+        System.out.print("Введите выбранный пункт: ");
     }
 
     public int userChoice(Scanner scanner) {
